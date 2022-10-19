@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
         validates :nickname, presence: true
 
-        # has_many :fishes
+         has_many :fishes
         # has_many :questions
         # has_many :Answers
 end

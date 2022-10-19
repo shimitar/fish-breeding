@@ -1,8 +1,14 @@
 class Fish < ApplicationRecord
-  # with_options presence: true do
-    # :name,     null: false
-      # t.string     :size,     null: false
-      # t.text       :fish_text, null: false
-      # t.integer    :category_id, null: false
-      # t.references :user,
+  with_options presence: true do
+    validates  :name
+    validates  :size
+    validates  :fish_text
+    validates  :category_id, numericality: { other_than: 1, message: 'を入力してください'}
+    validates  :user_id
+  end
+  
+  belongs_to :user
+  has_one_attached :image
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
 end
