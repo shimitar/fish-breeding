@@ -15,13 +15,13 @@
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <%= link_to image_tag("logo.png", class: :logo), root_path %>
+            <%= link_to "FishBreeding",root_path, class: :logo %>
           </div>
           <%# ログインしているときは以下を表示するようにしましょう %>
           <% if user_signed_in? %>
             <div class="nav__right">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "投稿する", new_prototype_path, class: :nav__btn %>
+              <%= link_to "投稿する", new_fish_path, class: :nav__btn %>
             </div>
            <% else %>
           <%# ログインしていないときは以下を表示するようにしましょう %>
