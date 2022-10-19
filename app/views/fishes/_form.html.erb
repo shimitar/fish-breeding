@@ -1,0 +1,34 @@
+<%= form_with model: fish, local: true do |f|%>
+  <div class="field">
+    <%= f.label :name, "魚の名前" %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :size, "魚の大きさ" %><br />
+    <%= f.text_area :size, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fish_text, "魚の説明" %><br />
+    <%= f.text_area :fish_text, class: :form__text %>
+  </div>
+
+ <div class="field">
+    <%= f.label :category_id, "魚の説明" %><br />
+     <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"fish-category"}) %>
+       </div>
+
+  <div class="field">
+    <%= f.label :image, "魚の画像" %><br />
+    <%= f.file_field :image%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
