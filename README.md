@@ -55,6 +55,7 @@ Fish Breeding
 | size              | string     | null: false                   |
 | fish_text         | text       | null: false                   |
 | category_id       | integer    | null: false                   |
+| user              | references | null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
