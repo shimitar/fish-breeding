@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_19_070742) do
+ActiveRecord::Schema.define(version: 2022_10_20_022451) do
+
+  create_table "breedings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "tank_size"
+    t.string "temperature"
+    t.string "filter"
+    t.string "raito"
+    t.string "condition"
+    t.string "sand"
+    t.string "plant"
+    t.bigint "user_id", null: false
+    t.bigint "fish_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fish_id"], name: "index_breedings_on_fish_id"
+    t.index ["user_id"], name: "index_breedings_on_user_id"
+  end
 
   create_table "fish", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -36,5 +52,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_070742) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "breedings", "fish"
+  add_foreign_key "breedings", "users"
   add_foreign_key "fish", "users"
 end
