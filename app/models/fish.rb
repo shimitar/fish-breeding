@@ -1,8 +1,8 @@
 class Fish < ApplicationRecord
-  # with_options presence: true do
-    # :name,     null: false
-      # t.string     :size,     null: false
-      # t.text       :fish_text, null: false
-      # t.integer    :category_id, null: false
-      # t.references :user,
+
+  belongs_to :user
+  has_one    :breeding
+  has_one_attached :image
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
 end

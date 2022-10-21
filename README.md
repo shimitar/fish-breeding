@@ -44,6 +44,7 @@ Fish Breeding
 
 ### Association
 - has_many :fishes
+- has_many :breedings
 - has_many :questions
 - has_many :Answers
 
@@ -82,7 +83,7 @@ Fish Breeding
 - belongs_to :user
 - belongs_to :question
 
-## breedings テーブル
+## breeds テーブル
 | Column            | Type       | Options                       |
 | ------------------| ---------- | ------------------------------|
 | tank_size         | string     |                               |
@@ -92,6 +93,7 @@ Fish Breeding
 | condition         | string     |                               |
 | sand              | string     |                               |
 | plant             | string     |                               |
+| breeding_text     | string     |                               |
 | user              | references | null: false, foreign_key: true|
 | fish              | references | null: false, foreign_key: true|
 

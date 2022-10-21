@@ -4,13 +4,13 @@
     <%# ログインしているときは以下を表示する %>
       <div class="greeting">
         こんにちは
-        <%# <%= current_user.nickname, class: :greeting__link %> %>
+        <%= current_user.nickname %>
         さん
       </div>
     <% end %>
     <%# // ログインしているときは上記を表示する %>
     <div class="card__wrapper">
-    <%= render partial: 'fish', collection: @fishes %>
+    <%= render partial: 'fish', collection: @fish %>
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
     </div>
   </div>
