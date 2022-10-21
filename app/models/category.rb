@@ -9,7 +9,7 @@ class Category < ActiveHash::Base
     { id: 7, name: 'アナバンテッド' },
     { id: 8, name: '古代魚' },
     { id: 9, name: '日本産淡水魚' },
-    { id: 10, name: 'その他' },
+    { id: 10, name: 'その他' }
   ]
 
   include ActiveHash::Associations

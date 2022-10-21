@@ -1,4 +1,4 @@
-<%= form_with model: fish, local: true do |f|%>
+<%= form_with(model: fish_breed, url: fishes_path, local: true) do |f|%>
   <div class="field">
     <%= f.label :name, "魚の名前" %><br />
     <%= f.text_field :name %>
@@ -6,7 +6,7 @@
 
   <div class="field">
     <%= f.label :size, "魚の大きさ" %><br />
-    <%= f.text_area :size, class: :form__text %>
+    <%= f.text_field :size, class: :form__text %>
   </div>
 
   <div class="field">
@@ -14,18 +14,55 @@
     <%= f.text_area :fish_text, class: :form__text %>
   </div>
 
- <div class="field">
-    <%= f.label :category_id, "魚の説明" %><br />
      <div class="weight-bold-text">
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"fish-category"}) %>
-       </div>
 
   <div class="field">
     <%= f.label :image, "魚の画像" %><br />
-    <%= f.file_field :image%>
+    <%= f.file_field :image %>
+  </div>
+
+   <div class="field">
+    <%= f.label :tank_size, "水槽の大きさ" %><br />
+    <%= f.text_field :tank_size, class: :form__text %>
+  </div>
+
+ <div class="field">
+    <%= f.label :temperature, "水温" %><br />
+    <%= f.text_field :temperature, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :condition, "水質" %><br />
+    <%= f.text_field :condition, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :filter, "使っているフィルター" %><br />
+    <%= f.text_field :filter, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :raito, "使っているライト" %><br />
+    <%= f.text_field :raito, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :sand, "底砂" %><br />
+    <%= f.text_field :sand, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :plant, "水草" %><br />
+    <%= f.text_field :plant, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :breeding_text, "飼育環境の説明" %><br />
+    <%= f.text_area :breeding_text, class: :form__text %>
   </div>
 
   <div class="actions">

@@ -1,10 +1,9 @@
 <div class="card">
-  <%= link_to image_tag(fish.image, class: 'card__img'), fish_path(fish) %>
+  <%= image_tag fish.image, class: 'card__img'%>
   <div class="card__body">
-    <%= link_to fish.name, fish_path(fish), class: 'card__title' %>
+    <%= link_to fish.name, fishes_path, class: 'card__title' %>
     <p class="card__summary">
-      <%#= fish.catch_copy %>
     </p>
-    <%= link_to "#{fish.user.name}", user_path(fish.user), class: 'card__user' %>
+    <%= fish.user.nickname %>
   </div>
 </div>
