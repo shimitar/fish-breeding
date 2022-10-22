@@ -1,7 +1,8 @@
 class FishesController < ApplicationController
 
   def index
-    @fish = Fish.includes(:user)
+    @fishes = Fish.includes(:user)
+    @breeds = Breed.includes(:user)
   end
 
   def new
@@ -16,6 +17,11 @@ class FishesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @fish = Fish.find(params[:id])
+    @breed = Breed.find_by(fish_id: params[:id])
   end
 
   private

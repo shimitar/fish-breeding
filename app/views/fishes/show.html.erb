@@ -2,34 +2,81 @@
   <div class="inner">
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
-        <%= @fish_breed.name %>
+        <%= @fish.name %>
       </p>
-      <%= @fish_breed.user.nickname %>
+      <%#= @fish.user.nickname %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
        <%# if user_signed_in? && current_user == @fish_breed.user %>
         <div class="prototype__manage">
           <%#= link_to "編集する", edit_prototype_path(@prototype), class: :prototype__btn %>
           <%#= link_to "削除する", prototype_path(@prototype), method: :delete, class: :prototype__btn %>
         </div>
-        <% end %>
+        <%# end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
-        <%= image_tag @fish_breed.image %>
+        <%= image_tag @fish.image %>
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
-          <p class="detail__title">キャッチコピー</p>
+          <p class="detail__title">大きさ</p>
           <p class="detail__message">
-            <%= @fish_breed.size %>
+            <%= @fish.size %>
           </p>
         </div>
         <div class="prototype__detail">
-          <p class="detail__title">コンセプト</p>
+          <p class="detail__title">カテゴリー</p>
           <p class="detail__message">
-            <%= @fish_breed.category_id %>
+            <%= @fish.category.name %>
           </p>
         </div>
-      </div>
+         <div class="prototype__detail">
+          <p class="detail__title">水槽の大きさ</p>
+          <p class="detail__message">
+            <%= @breed.tank_size %>
+          </p>
+        </div>
+           <div class="prototype__detail">
+          <p class="detail__title">水温</p>
+          <p class="detail__message">
+            <%= @breed.temperature %>
+             </p>
+            </div>
+        <div class="prototype__detail">
+          <p class="detail__title">使っているフィルター</p>
+          <p class="detail__message">
+            <%= @breed.filter %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">使っているライト</p>
+          <p class="detail__message">
+            <%= @breed.raito %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">水質</p>
+          <p class="detail__message">
+            <%= @breed.condition %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">底砂</p>
+          <p class="detail__message">
+            <%= @breed.sand %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">水草</p>
+          <p class="detail__message">
+            <%= @breed.plant %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">飼育環境の説明</p>
+          <p class="detail__message">
+            <%= @breed.breeding_text %>
+          </p>
+        </div>
       <%# <div class="prototype__comments"> %>
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
          <%# <% if user_signed_in? %>
