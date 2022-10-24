@@ -37,6 +37,12 @@ class FishesController < ApplicationController
     end
   end
 
+  def destroy
+    fish = Fish.find(params[:id])
+    fish.destroy
+    redirect_to root_path
+ end
+
   private
 
   def fish_breed_params
