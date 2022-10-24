@@ -26,13 +26,10 @@ class FishesController < ApplicationController
 
   def edit
     @fish = Fish.find(params[:id])
-    @fish_breed = FishBreed.new
   end
 
   def update
-    @fish = Fish.new(fish_params)
-    if @fish.valid?
-      @fish.update
+    if @fish.update(fish_params)
       redirect_to fish_path
     else
       render :edit
