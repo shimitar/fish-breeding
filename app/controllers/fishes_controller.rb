@@ -29,6 +29,7 @@ class FishesController < ApplicationController
   end
 
   def update
+    @fish = Fish.find(params[:id])
     if @fish.update(fish_params)
       redirect_to fish_path
     else

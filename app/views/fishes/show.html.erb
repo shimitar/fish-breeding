@@ -72,6 +72,7 @@
        <% if user_signed_in? && current_user == @fish.user %>
         <div class="prototype__manage">
           <%= link_to "魚の情報を編集する", edit_fish_path(@fish), class: :prototype__btn %>
+           <%= link_to "飼育環境の情報を編集する",  edit_fish_breed_path(@fish), class: :prototype__btn %>
           <%#= link_to "削除する", prototype_path(@prototype), method: :delete, class: :prototype__btn %>
         </div>
         <% end %>

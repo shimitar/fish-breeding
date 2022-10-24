@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: "fishes#index"
 
   resources :fishes, only: [:index, :new, :create, :show, :edit, :update] do
-    resources :breeds, only: [:update]
+    resources :breeds, only: [:edit, :update]
   end
 end
