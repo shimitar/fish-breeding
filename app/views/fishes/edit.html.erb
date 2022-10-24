@@ -1,0 +1,90 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">魚の情報の編集</h2>
+ <%= form_with(model: @fish, url: fish_path(id: @fish), local: true) do |f|%>
+  <div class="field">
+    <%= f.label :name, "魚の名前" %>
+    <span class="indispensable">（必須）</span><br />
+    <%= f.text_field :name, class: :form__text  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :size, "魚の大きさ" %>
+    <span class="indispensable">（必須）</span><br />
+    <%= f.text_field :size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fish_text, "魚の説明" %>
+    <span class="indispensable">（必須）</span><br />
+    <%= f.text_area :fish_text, class: :form__text %>
+  </div>
+
+     <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">（必須）</span>
+        </div>
+<%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"fish-category"}) %>
+
+  <div class="field">
+    <%= f.label :image, "魚の画像" %>
+    <span class="indispensable">（必須）</span><br />
+    <%= f.file_field :image %>
+  </div>
+
+   <div class="field">
+    <%= f.label :tank_size, "水槽の大きさ" %>
+    <span class="indispensable">（任意）</span><br />
+    <%= f.text_field :tank_size, class: :form__text %>
+  </div>
+
+ <div class="field">
+    <%= f.label :temperature, "水温" %>
+    <span class="indispensable">（任意）</span><br />
+    <%= f.text_field :temperature, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :condition, "水質" %>
+    <span class="indispensable">（任意）</span><br />
+    <%= f.text_field :condition, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :filter, "使っているフィルター" %>
+    <span class="indispensable">（任意）</span><br />
+    <%= f.text_field :filter, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :raito, "使っているライト" %>
+    <span class="indispensable">（任意）</span><br />
+    <%= f.text_field :raito, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :sand, "底砂" %>
+    <span class="indispensable">（任意）</span><br />
+    <%= f.text_field :sand, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :plant, "水草" %>
+    <span class="indispensable">（任意）</span><br />
+    <%= f.text_field :plant, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :breeding_text, "飼育環境の説明" %>
+    <span class="indispensable">（任意）</span><br />
+    <%= f.text_area :breeding_text, class: :form__text %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
+    </div>
+  </div>
+</div>

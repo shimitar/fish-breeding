@@ -4,15 +4,6 @@
       <p class="prototype__hedding">
         <%= @fish.name %>
       </p>
-      <%#= @fish.user.nickname %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-       <%# if user_signed_in? && current_user == @fish_breed.user %>
-        <div class="prototype__manage">
-          <%#= link_to "編集する", edit_prototype_path(@prototype), class: :prototype__btn %>
-          <%#= link_to "削除する", prototype_path(@prototype), method: :delete, class: :prototype__btn %>
-        </div>
-        <%# end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
         <%= image_tag @fish.image %>
       </div>
@@ -77,11 +68,19 @@
             <%= @breed.breeding_text %>
           </p>
         </div>
+         <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+       <% if user_signed_in? && current_user == @fish.user %>
+        <div class="prototype__manage">
+          <%= link_to "魚の情報を編集する", edit_fish_path(@fish), class: :prototype__btn %>
+          <%#= link_to "削除する", prototype_path(@prototype), method: :delete, class: :prototype__btn %>
+        </div>
+        <% end %>
+      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <%# <div class="prototype__comments"> %>
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-         <%# <% if user_signed_in? %>
-          <%# <%= form_with(model:[@prototype,@comment],local: true) do |f| %>
-            <%# <div class="field"> %>
+          <%# if user_signed_in? %>
+          <%#= form_with(model:[@prototype,@comment],local: true) do |f| %>
+            <%# div class="field"> %>
               <%# <%= f.label :content, "コメント" %>
               <%# br />
               <%# <%= f.text_field :content, id:"comment_content" %>

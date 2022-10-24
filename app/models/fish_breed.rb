@@ -13,9 +13,11 @@ class FishBreed
      validates  :image
      validates  :user_id
    end
+
    def save
      fish = Fish.create(name: name, user_id: user_id, size: size, fish_text: fish_text, category_id: category_id, image: image)
      Breed.create(tank_size: tank_size, temperature: temperature, filter: filter, raito: raito, condition: condition,
                      sand: sand, plant: plant, breeding_text: breeding_text, fish_id: fish.id, user_id: user_id)
    end
+
 end
