@@ -1,7 +1,7 @@
 <div class="card">
   <%= image_tag fish.image, class: 'card__img'%>
   <div class="card__body">
-    <%= link_to fish.name, fishes_path, class: 'card__title' %>
+    <%= link_to fish.name, fish_path(id: fish), class: 'card__title' %>
     <p class="card__summary">
     </p>
     <%= fish.user.nickname %>
