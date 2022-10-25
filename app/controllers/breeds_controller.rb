@@ -1,13 +1,15 @@
 class BreedsController < ApplicationController
 
   def edit
+    @fish = Fish.find(params[:fish_id])
     @breed = Breed.find(params[:id])
   end
 
   def update
     @breed = Breed.find(params[:id])
     if @breed.update(breed_params)
-      redirect_to controller: :fishes, action: :show
+      @fish = Fish.find(params[:fish_id])
+      render template: "fishes/show"
     else
       render :edit
     end
