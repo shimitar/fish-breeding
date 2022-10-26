@@ -1,11 +1,15 @@
 <main class="main">
+<div class="back">
+  <%= image_tag "IMG_0016.jpeg",  class: "back-image"%>
   <div class="inner">
     <div class="prototype__wrapper">
+      <div class="fish_name" >
       <p class="prototype__hedding">
         <%= @fish.name %>
       </p>
-      <div class="prototype__image">
-        <%= image_tag @fish.image %>
+        </div>
+      <div class="fish__image">
+        <%= image_tag @fish.image, class: 'card__img' %>
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
@@ -18,6 +22,12 @@
           <p class="detail__title">カテゴリー</p>
           <p class="detail__message">
             <%= @fish.category.name %>
+          </p>
+        </div>
+         <div class="prototype__detail">
+          <p class="detail__title">魚の説明</p>
+          <p class="detail__message">
+            <%= @fish.fish_text %>
           </p>
         </div>
          <div class="prototype__detail">
@@ -68,15 +78,17 @@
             <%= @breed.breeding_text %>
           </p>
         </div>
-
        <% if user_signed_in? && current_user == @fish.user %>
         <div class="prototype__manage">
-          <%= link_to "魚の情報を編集する", edit_fish_path(@fish), class: :prototype__btn %>
-           <%= link_to "飼育環境の情報を編集する",  edit_fish_breed_path(@fish), class: :prototype__btn %><br />
+          <%= link_to "魚の情報を編集する", edit_fish_path(fish_id: @fish.id), class: :prototype__btn %>
+           <%= link_to "飼育環境の情報を編集する",  edit_fish_breed_path(fish_id: @fish,id: @breed), class: :prototype__btn %><br />
           <%= link_to "削除する", fish_path(@fish), method: :delete, class: :prototype__btn %>
         </div>
         <% end %>
-
+           </div>
+          </div>
+         </div>
+       </main>
       <%# <div class="prototype__comments"> %>
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
           <%# if user_signed_in? %>
@@ -103,6 +115,4 @@
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         <%# </ul> %>
       <%# </div> %>
-    </div>
-  </div>
-</main>
+
