@@ -1,0 +1,20 @@
+<%= image_tag "IMG_0016.jpeg",  class: "back-image"%>
+<div class="question_main">
+ <div class="question_contents">
+  <div class="contents_top">
+       質問画面
+   </div>
+<div class="container">
+ <%= form_with(model: [@fish, @question], local: true) do |form| %>
+   <div class="input-items">
+      <div class="main_text">
+       <%= form.text_field :question_text, placeholder: "質問内容"%>
+      </div>
+      <div class="post_btn">
+       <%= form.submit "POST"%>
+      </div>
+     </div>
+    <% end %>
+  </div>
+ </div>
+</div>

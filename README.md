@@ -57,28 +57,35 @@ Fish Breeding
 | fish_text         | text       | null: false                   |
 | category_id       | integer    | null: false                   |
 | user              | references | null: false, foreign_key: true|
-
 ### Association
 - belongs_to :user
 - has_one    :breeding
+- has_many   :questions
 
 ## questions テーブル
 
 | Column       | Type       | Options                        |
 | -------------| ---------- | ------------------------------ |
+| question_name| string     | null: false                    |
 | question_text| text       | null: false                    |
 | user         | references | null: false, foreign_key: true |
+| fish         | references | null: false, foreign_key: true |
+
 ### Association
 - belongs_to :user
+- belongs_to :fish
 - has_many :answers
+
 
 ## answers テーブル
 
 | Column     | Type       | Options                        |
 | -----------| ---------- | ------------------------------ |
+| answer_name| string     | null: false                    |
 | answer_text| text       | null: false                    |
 | user       | references | null: false, foreign_key: true |
 | question   | references | null: false, foreign_key: true |
+
 ### Association
 - belongs_to :user
 - belongs_to :question
@@ -99,7 +106,7 @@ Fish Breeding
 
 ### Association
 - belongs_to :user
-- belongs_to :fish 
+- belongs_to :fish
 
 # データベース設計
 
