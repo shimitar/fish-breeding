@@ -36,7 +36,7 @@ a {
 
 /* ヘッダー */
 .header {
-  background-color: #f1f8fe;
+  background: linear-gradient(#66EDFA,white);
   padding: 20px 0;
 }
 .inner {
@@ -123,11 +123,6 @@ a {
 }
 
 /* メイン */
-.main {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
 .card__back {
   padding:50px 0 0 20px;
   height: 100vh;
@@ -136,13 +131,14 @@ display: flex;
 justify-content: center;
 }
 .back-image {
+  min-height: 100%;
   object-fit: cover;
   opacity: 30%;
   position: absolute;
 }
 .greeting {
  color: white;
- background-color: #53B433;
+ background: linear-gradient(#53B433,green); 
  border-radius: 5px;
  margin:20px 0 0 70px;
  position: absolute;
@@ -162,8 +158,8 @@ justify-content: center;
   min-height: calc(100vh - 150px);
   position: absolute;
 }
-.card {
-
+.back {
+  position: relative;
 }
 .card__img {
   height: 50vh;
@@ -193,8 +189,12 @@ justify-content: center;
   width: 1024px;
   margin: 0 auto;
 }
-.prototype__wrapper{
-  min-height: calc(100vh - 161px);
+.fish_user{
+  margin-top: 20px;
+  text-align: left;
+}
+.fish__user{
+  margin-left: 30px;
 }
 .prototype__hedding{
   font-size: 24px;
@@ -212,7 +212,11 @@ justify-content: center;
   padding-top: 20px;
 }
 .fish__image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 70%;
+  height: 100%;
   margin: 0 auto;
   padding: 16px 0;
   position: relative;
@@ -236,7 +240,7 @@ justify-content: center;
 .prototype__btn{
   display: block;
   padding: 0.4em 1.6em;
-  font-size: 0.4em;
+  font-size: 1em;
   color: #999;
   text-decoration: none;
   user-select: none;
@@ -248,6 +252,160 @@ justify-content: center;
 .prototype__btn:hover{
   color: #fff;
   background: #999;
+}
+
+.index-main {
+  height: calc(100vh - 65px);
+  margin:50px 0 20px 0;
+  background-color: white;
+  border: 5px solid #1C3667;
+  border-radius: 5px;
+  position: relative;
+}
+
+.contents{
+  width: 700px;
+  margin: 0 auto;
+}
+
+.content_post{
+  display: flex;
+  height: 100px;
+  width: 100%;
+  margin-bottom: 25px;
+  border: 1px solid black;
+}
+
+.content_left{
+padding-top: 30px;
+text-align: center;
+width: 70px;
+height: 100%;
+background-color: #1C3667;
+color: #FFFFFF;
+}
+
+.content_right{
+  width: 630px;
+  padding: 10px 15px;
+  background-color: #FFFFFF;
+}
+
+.content_integer{
+  width: 70px;
+  height: 38px;
+  margin: 20px auto 0;
+  line-height: 38px;
+  font-size: 26px;
+  text-align: center;
+}
+.comments{
+  width: 70px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.question-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question-top__title {
+  width: 500px;
+  font-size: 14px;
+}
+
+.question-top__name {
+  font-size: 12px;
+  text-align: right;
+}
+
+.question-bottom {
+  margin-top: 10px;
+}
+
+.question-bottom__content {
+  font-size: 12px;
+}
+
+.question_main{
+  height: calc(100vh - 65px);
+  padding: 80px 0;
+}
+
+.question_contents{
+width: 700px;
+height: 420px;
+margin: 0 auto;
+position: relative;
+}
+
+.contents_top{
+  text-align: center;
+  font-size: 25px;
+  background: linear-gradient(#66EDFA,white);
+  border: 2px solid black;
+  height: 45px;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+}
+
+.container{
+  padding: 40px 0;
+  border-radius: 0 0 5px 5px;
+  height: 300px;
+  width: 100%;
+  border: 2px solid black;
+  position: relative;
+}
+
+.input-items {
+  width: 520px;
+  margin: 0 auto;
+}
+
+.input-items input {
+  width: 100%;
+  height: 100%;
+  line-height: 20%;
+}
+
+.input-items textarea {
+  width: 100%;
+  height: 100%;
+}
+
+.sub_text{
+  height: 30px;
+  width: width: 100%;
+}
+
+.main_text{
+  height: 120px;
+  width: 100%;
+  margin-top: 15px;
+
+}
+
+.post{
+  height: 30px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.post_btn{
+  height: 36px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.post_btn input{
+  background: linear-gradient(#66EDFA,white);
+  border: 1px solid black;
+  font-size: 18px;
 }
 
 .prototype__comments{

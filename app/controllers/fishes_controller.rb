@@ -21,6 +21,7 @@ class FishesController < ApplicationController
   def show
     @fish = Fish.find(params[:id])
     @breed = Breed.find_by(fish_id: @fish.id)
+    @questions = Question.where(fish_id: params[:id] )
   end
 
   def edit

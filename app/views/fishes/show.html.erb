@@ -1,8 +1,14 @@
 <main class="main">
 <div class="back">
-  <%= image_tag "IMG_0016.jpeg",  class: "back-image"%>
+  <%= image_tag "IMG_0016.jpeg",  class: "back-image"%> 
   <div class="inner">
     <div class="prototype__wrapper">
+    <div class="fish_user">
+    <p class="detail__title">投稿者名</p>
+     <p class="fish__user">
+   <%= @fish.user.nickname %>
+   </p>
+   </div>
       <div class="fish_name" >
       <p class="prototype__hedding">
         <%= @fish.name %>
@@ -86,6 +92,37 @@
         </div>
         <% end %>
            </div>
+  <div class="index-main">
+ <div class="contents">
+<% @questions.each do |question| %>
+    <div class="content_post">
+      <div class="content_left">
+      質問
+      </div>
+      <div class="content_right">
+      <div class="question-top">
+       <div class="question-top__title">
+         質問内容
+       </div>
+       <div class="question-top__name">
+         投稿者名<%= question.user.nickname %>
+        </div>
+       </div>
+       <div class="question-bottom">
+         <div class="question-bottom__content">
+          <%= question.question_text %>
+         </div>
+        </div>
+      </div>
+     </div>
+     <% end %> 
+  </div>
+ </div>
+  <% if user_signed_in? %>
+        <div class="prototype__manage">
+ <%= link_to "質問をする", fish_questions_path(@fish), class: :prototype__btn %>
+      </div>
+        <% end %>
           </div>
          </div>
        </main>

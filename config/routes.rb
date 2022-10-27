@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :fishes do
     resources :breeds, only: [:edit, :update]
+    resources :questions, only: [:index, :create]
   end
 end
