@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_many :fishes
   has_many :breeds
   has_many :questions
-  # has_many :Answers
+  has_many :Answers
 end
