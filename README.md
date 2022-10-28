@@ -66,7 +66,6 @@ Fish Breeding
 
 | Column       | Type       | Options                        |
 | -------------| ---------- | ------------------------------ |
-| question_name| string     | null: false                    |
 | question_text| text       | null: false                    |
 | user         | references | null: false, foreign_key: true |
 | fish         | references | null: false, foreign_key: true |
@@ -81,7 +80,6 @@ Fish Breeding
 
 | Column     | Type       | Options                        |
 | -----------| ---------- | ------------------------------ |
-| answer_name| string     | null: false                    |
 | answer_text| text       | null: false                    |
 | user       | references | null: false, foreign_key: true |
 | question   | references | null: false, foreign_key: true |
