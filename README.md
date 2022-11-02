@@ -61,6 +61,7 @@ Fish Breeding
 - belongs_to :user
 - has_one    :breeding
 - has_many   :questions
+- has_many   :answers
 
 ## questions テーブル
 
@@ -82,10 +83,12 @@ Fish Breeding
 | -----------| ---------- | ------------------------------ |
 | answer_text| text       | null: false                    |
 | user       | references | null: false, foreign_key: true |
+| fish       | references | null: false, foreign_key: true |
 | question   | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
+- belongs_to :fish
 - belongs_to :question
 
 ## breeds テーブル

@@ -97,7 +97,7 @@
 <% @questions.each do |question| %>
     <div class="content_post">
       <div class="content_left">
-      質問
+       <%= link_to "質問", question_answers_path(question_id:question.id, fish_id:@fish) %>
       </div>
       <div class="content_right">
       <div class="question-top">
@@ -116,11 +116,33 @@
       </div>
      </div>
      <% end %> 
+     <% @answers.each do |answer| %>
+    <div class="content_post">
+      <div class="content_left">
+       解答
+      </div>
+      <div class="content_right">
+      <div class="question-top">
+       <div class="question-top__title">
+         解答内容
+       </div>
+       <div class="question-top__name">
+         投稿者名<%= answer.user.nickname %>
+        </div>
+       </div>
+       <div class="question-bottom">
+         <div class="question-bottom__content">
+          <%= answer.answer_text %>
+         </div>
+        </div>
+      </div>
+     </div>
+     <% end %> 
   </div>
  </div>
   <% if user_signed_in? %>
         <div class="prototype__manage">
- <%= link_to "質問をする", fish_questions_path(@fish), class: :prototype__btn %>
+ <%= link_to "質問をする", questions_path(id: @fish), class: :prototype__btn %>
       </div>
         <% end %>
           </div>

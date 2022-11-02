@@ -2,16 +2,16 @@
 <div class="question_main">
  <div class="question_contents">
   <div class="contents_top">
-       質問画面
+       解答画面
    </div>
 <div class="container">
- <%= form_with(model: [@fish, @question], local: true) do |form| %>
+ <%= form_with(model: [@question, @answer], url: question_answers_path(user_id: current_user.id), local: true) do |form| %>
    <div class="input-items">
       <div class="main_text">
-       <%= form.text_field :question_text, placeholder: "質問内容"%>
+       <%= form.text_field :answer_text, placeholder: "解答内容"%>
       </div>
       <div class="post_btn">
-       <%= form.submit "質問する"%>
+       <%= form.submit "解答する"%>
       </div>
      </div>
     <% end %>
