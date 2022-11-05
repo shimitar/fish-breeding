@@ -100,7 +100,11 @@
 <% @questions.each do |question| %>
     <div class="content_post">
       <div class="content_left">
+       <% if user_signed_in? && current_user == @fish.user %>
        <%= link_to "質問", question_answers_path(question_id:question.id, fish_id:@fish),class: :answer__link %>
+      <% else %>
+      質問
+      <% end %>
       </div>
       <div class="content_right">
       <div class="question-top">
