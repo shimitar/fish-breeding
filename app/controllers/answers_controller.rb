@@ -7,12 +7,9 @@ def index
 end
 
 def create
-  binding.pry
     @answer = Answer.create(answer_params)
-    @fish = Fish.find_by(params[:question_id])
-    @breed = Breed.find_by(fish_id: @fish.id)
-    # @answer = Answer.find(params[:question_id])
-    redirect_to controller: :fishes, action: :index
+    fish = Fish.find(params[:fish_id])
+    redirect_to fish_path(id: fish.id, fish_id: fish.id)
 end
 
   private

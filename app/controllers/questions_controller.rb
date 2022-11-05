@@ -8,11 +8,8 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.create(question_params)
-    # @fish = Fish.find(params[:fish_id])
-    # @breed = Breed.find_by(fish_id: @fish.id)
-    # @questions = Question.find_by(params[:fish_id])
-    # @answers = @questions.answers.where(fish_id: params[:fish_id])
-    redirect_to "/fishes/#{@question.fish.id}"
+    fish = Fish.find(params[:fish_id])
+    redirect_to fish_path(id: fish.id, fish_id: fish.id)
   end
 
   private

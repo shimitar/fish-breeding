@@ -24,7 +24,6 @@ class FishesController < ApplicationController
     @question = Question.find_by(params[:fish_id])
     @questions = @fish.questions.includes(:user)
     @answers = @question.answers.where(fish_id: params[:fish_id])
-    binding.pry
   end
 
   def edit
