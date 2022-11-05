@@ -5,7 +5,7 @@
        解答画面
    </div>
 <div class="container">
- <%= form_with(model: [@question, @answer], url: question_answers_path(user_id: current_user.id), local: true) do |form| %>
+ <%= form_with(model: [@fish, @question, @answer], url: question_answers_path(user_id: current_user.id,fish_id: @fish), local: true) do |form| %>
    <div class="input-items">
       <div class="main_text">
        <%= form.text_field :answer_text, placeholder: "解答内容"%>

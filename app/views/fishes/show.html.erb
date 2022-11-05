@@ -92,12 +92,15 @@
         </div>
         <% end %>
            </div>
+           <div class="question_top_text">
+     <%= @fish.user.nickname %>さんは、左側の質問の文字をクリックすると質問に解答することができます。
+  </div>
   <div class="index-main">
  <div class="contents">
 <% @questions.each do |question| %>
     <div class="content_post">
       <div class="content_left">
-       <%= link_to "質問", question_answers_path(question_id:question.id, fish_id:@fish) %>
+       <%= link_to "質問", question_answers_path(question_id:question.id, fish_id:@fish),class: :answer__link %>
       </div>
       <div class="content_right">
       <div class="question-top">
@@ -105,7 +108,7 @@
          質問内容
        </div>
        <div class="question-top__name">
-         投稿者名<%= question.user.nickname %>
+         投稿者名<br /><%= question.user.nickname %>
         </div>
        </div>
        <div class="question-bottom">
@@ -116,6 +119,8 @@
       </div>
      </div>
      <% end %> 
+  </div>
+ <div class="contents">
      <% @answers.each do |answer| %>
     <div class="content_post">
       <div class="content_left">
@@ -140,7 +145,7 @@
      <% end %> 
   </div>
  </div>
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_user != @fish.user%>
         <div class="prototype__manage">
  <%= link_to "質問をする", questions_path(id: @fish), class: :prototype__btn %>
       </div>
