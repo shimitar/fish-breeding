@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :fish do
       name {Faker::Lorem.sentence}
-      size {}
+      size {'10cm'}
       fish_text {Faker::Lorem.sentence}
       image {Faker::Lorem.sentence}
-      association :user 
+      association :user
+      
   end
 end

@@ -7,7 +7,7 @@ class FishBreed
 
    with_options presence: true do
      validates :name
-     validates  :size, format: { with: /\A?=\d.*?=[cm]\z|\A?=\d.*?=[m]\z/, message: 'を入力してください' }
+     validates  :size, format: { with: /cm\z|m\z/, message: 'を入力してください' }
      validates  :fish_text
      validates  :category_id, numericality: { other_than: 1, message: 'を入力してください' }
      validates  :image
