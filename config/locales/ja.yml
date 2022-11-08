@@ -1,0 +1,40 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      fish:
+        name: 魚の名前
+        image: 画像
+        size: 魚の大きさ
+        fish_text: 魚の説明
+        category_id: 魚のカテゴリー
+        user: ユーザー
+      breed:
+        tank_size: 水槽の大きさ
+        temperature: 水温
+        filter: フィルター
+        raito: 使っているライト
+        condition: 水質
+        sand: 底砂
+        plant: 水草
+        breeding_text: 飼育環境の説明
+        user: ユーザー
+  activemodel:
+    attributes:
+       fish_breed:
+         name: 魚の名前
+         image: 画像
+         size: 魚の大きさ
+         fish_text: 魚の説明
+         category_id: 魚のカテゴリー
+         tank_size: 水槽の大きさ
+         temperature: 水温
+         filter: フィルター
+         raito: 使っているライト
+         condition: 水質
+         sand: 底砂
+         plant: 水草
+         breeding_text: 飼育環境の説明
+         user: ユーザー
+         fish: 魚の情報
