@@ -20,6 +20,7 @@ ja:
         plant: 水草
         breeding_text: 飼育環境の説明
         user_id: ユーザー
+        fish_id: 魚の情報
   activemodel:
     attributes:
        fish_breed:
@@ -37,4 +38,3 @@ ja:
          plant: 水草
          breeding_text: 飼育環境の説明
          user_id: ユーザー
-         fish: 魚の情報

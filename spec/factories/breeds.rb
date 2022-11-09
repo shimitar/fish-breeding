@@ -8,7 +8,9 @@ FactoryBot.define do
       sand {'大磯砂'}
       plant {'ミクロソリウム'}
       breeding_text {Faker::Lorem.sentence}
+
       association :user
       association :fish
+      
   end
 end
