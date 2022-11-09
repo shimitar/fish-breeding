@@ -5,7 +5,6 @@ RSpec.describe FishBreed, type: :model do
     before do
       user = FactoryBot.create(:user)
       @fish_breed = FactoryBot.build(:fish_breed, user_id: user.id)
-      sleep(1)
     end
 
     context '内容に問題ない場合' do
