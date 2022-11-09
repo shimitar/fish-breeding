@@ -4,8 +4,7 @@ RSpec.describe FishBreed, type: :model do
   describe '魚の新規投稿' do
     before do
       user = FactoryBot.create(:user)
-      fish = FactoryBot.create(:fish)
-      @fish_breed = FactoryBot.build(:fish_breed, fish_id: fish.id, user_id: user.id)
+      @fish_breed = FactoryBot.build(:fish_breed, user_id: user.id)
       sleep(1)
     end
 
@@ -47,37 +46,27 @@ RSpec.describe FishBreed, type: :model do
       it '魚の名前が空だと保存できない' do
         @fish_breed.name = ''
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("郵便番号を入力してください", "郵便番号は不正な値です")
+        expect(@fish_breed.errors.full_messages).to include("魚の名前を入力してください")
       end
       it '魚の大きさが空だと保存できない' do
         @fish_breed.size = ''
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("郵便番号を入力してください", "郵便番号は不正な値です")
+        expect(@fish_breed.errors.full_messages).to include("魚の大きさを入力してください")
       end
       it '魚の大きさにcmかmを入力しないと保存できない' do
         @fish_breed.size = '10'
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("郵便番号を入力してください", "郵便番号は不正な値です")
-      end
-      it '魚の大きさが全角数字だと保存できない' do
-        @fish_breed.size = '１０cm'
-        @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("郵便番号を入力してください", "郵便番号は不正な値です")
+        expect(@fish_breed.errors.full_messages).to include("魚の大きさは不正な値です")
       end
       it '魚のカテゴリーを選択していないと保存できない' do
         @fish_breed.category_id = 1
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("郵便番号を入力してください", "郵便番号は不正な値です")
+        expect(@fish_breed.errors.full_messages).to include("魚のカテゴリーを入力してください")
       end
       it '魚の説明が空だと保存できない' do
         @fish_breed.fish_text = ''
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("郵便番号を入力してください", "郵便番号は不正な値です")
-      end
-      it '魚の情報が紐付いていないと保存できない' do
-        @fish_breed.fish_id = nil
-        @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("商品を入力してください")
+        expect(@fish_breed.errors.full_messages).to include("魚の説明を入力してください")
       end
       it 'ユーザーが紐付いていないと保存できない' do
         @fish_breed.user_id = nil
