@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
 
 def index
-  @fish = Fish.find_by(params[:fish_id])
+  @fish = Fish.find_by(id:params[:fish_id])
   @question = Question.find(params[:question_id])
   @answer = Answer.new
 end

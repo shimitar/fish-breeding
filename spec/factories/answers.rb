@@ -7,5 +7,4 @@ FactoryBot.define do
       association :question
       
     end
-  end
 end
