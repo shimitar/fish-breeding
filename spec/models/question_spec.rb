@@ -15,6 +15,11 @@ RSpec.describe Question, type: :model do
       end
     end
       context '内容に問題がある場合' do
+        it '質問が空だと保存できない' do
+          @question.question_text = ''
+          @question.valid?
+          expect(@question.errors.full_messages).to include("質問を入力してください")
+        end
         it 'ユーザーが紐付いていないと保存できない' do
           @question.user_id = nil
           @question.valid?
