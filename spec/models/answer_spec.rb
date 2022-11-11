@@ -16,6 +16,11 @@ RSpec.describe Answer, type: :model do
       end
     end
       context '内容に問題がある場合' do
+        it '解答が空だと保存できない' do
+          @answer.answer_text = ''
+          @answer.valid?
+          expect(@answer.errors.full_messages).to include("解答を入力してください")
+        end
         it 'ユーザーが紐付いていないと保存できない' do
           @answer.user_id = nil
           @answer.valid?
