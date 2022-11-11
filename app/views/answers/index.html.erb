@@ -1,11 +1,14 @@
 <%= image_tag "IMG_0016.jpeg",  class: "back-image"%>
 <div class="question_main">
+<%= form_with(model: [@fish, @question, @answer], url: question_answers_path(user_id: current_user.id,fish_id: @fish), local: true) do |form| %>
+<div class="error_text">
+  <%= render 'shared/error_messages',model: form.object %>
+   </div>
  <div class="question_contents">
   <div class="contents_top">
        解答画面
    </div>
 <div class="container">
- <%= form_with(model: [@fish, @question, @answer], url: question_answers_path(user_id: current_user.id,fish_id: @fish), local: true) do |form| %>
    <div class="input-items">
       <div class="main_text">
        <%= form.text_field :answer_text, placeholder: "解答内容"%>

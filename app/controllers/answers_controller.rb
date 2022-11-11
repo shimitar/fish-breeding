@@ -7,9 +7,14 @@ def index
 end
 
 def create
-    @answer = Answer.create(answer_params)
-    fish = Fish.find(params[:fish_id])
+  @answer = Answer.create(answer_params)
+  if @answer.save 
+  fish = Fish.find(params[:fish_id])
     redirect_to fish_path(id: fish.id, fish_id: fish.id)
+  else
+    @fish = Fish.find_by(id:params[:fish_id])
+    render :index
+  end  
 end
 
   private
