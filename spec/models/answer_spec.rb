@@ -9,7 +9,6 @@ RSpec.describe Answer, type: :model do
       @answer = FactoryBot.build(:answer, user_id: user.id, fish_id: fish.id, question_id: question.id)
       sleep(1)
     end
-  end
 
     context '内容に問題ない場合' do
       it 'すべての値が正しく入力されていれば保存できる' do
@@ -33,4 +32,5 @@ RSpec.describe Answer, type: :model do
           expect(@answer.errors.full_messages).to include("質問を入力してください")
         end
     end
+  end
 end
