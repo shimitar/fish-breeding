@@ -29,7 +29,7 @@ RSpec.describe Answer, type: :model do
         it '質問が紐付いていないと保存できない' do
           @answer.question_id = nil
           @answer.valid?
-          expect(@answer.errors.full_messages).to include("質問を入力してください")
+          expect(@answer.errors.full_messages).to include("質問の情報を入力してください")
         end
     end
   end

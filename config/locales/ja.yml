@@ -22,9 +22,14 @@ ja:
         user_id: ユーザー
         fish_id: 魚の情報
       question:
-         question_text: 質問
-         user_id: ユーザー
-         fish_id: 魚の情報
+        question_text: 質問
+        user_id: ユーザー
+        fish_id: 魚の情報
+      answer:
+        answer_text: 解答
+        user_id: ユーザー
+        fish_id: 魚の情報
+        question_id: 質問の情報
   activemodel:
     attributes:
        fish_breed:
