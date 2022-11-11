@@ -17,14 +17,12 @@
           <div class="nav__left">
             <%= link_to "FishBreeding",root_path, class: :logo %>
           </div>
-          <%# ログインしているときは以下を表示するようにしましょう %>
           <% if user_signed_in? %>
             <div class="nav__right">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
               <%= link_to "投稿する", new_fish_path, class: :nav__btn %>
             </div>
            <% else %>
-          <%# ログインしていないときは以下を表示するようにしましょう %>
             <div class="nav__right">
               <%= link_to "ログイン",  user_session_path, id: 'new_user', class: :nav__btn %>
               <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>

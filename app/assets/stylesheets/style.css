@@ -85,6 +85,12 @@ a {
 }
 
 /* フォーム周り */
+.error_text{
+  text-align: center;
+  color: red;
+  margin-bottom: 20px;
+}
+
 .form__wrapper{
   min-height: calc(100vh - 161px);
 }
@@ -361,7 +367,7 @@ position: relative;
 }
 
 .container{
-  padding: 40px 0;
+  padding-top: 40px;
   border-radius: 0 0 5px 5px;
   height: 300px;
   width: 100%;

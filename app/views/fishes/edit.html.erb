@@ -4,6 +4,9 @@
     <div class="form__wrapper">
       <h2 class="page-heading">魚の情報の編集</h2>
  <%= form_with(model: @fish, url: fish_path(id: @fish), local: true) do |f|%>
+   <div class="error_text">
+  <%= render 'shared/error_messages',model: f.object %>
+   </div>
   <div class="field">
     <%= f.label :name, "魚の名前" %>
     <span class="indispensable">（必須）</span><br />
