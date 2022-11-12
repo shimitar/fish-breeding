@@ -35,6 +35,9 @@ a {
 }
 
 /* ヘッダー */
+.destroy_text{
+  display: none;
+}
 .header {
   background: linear-gradient(#66EDFA,white);
   padding: 20px 0;

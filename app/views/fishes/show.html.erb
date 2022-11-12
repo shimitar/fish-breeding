@@ -88,7 +88,7 @@
         <div class="prototype__manage">
           <%= link_to "魚の情報を編集する", edit_fish_path(fish_id: @fish.id), class: :prototype__btn %>
            <%= link_to "飼育環境の情報を編集する",  edit_fish_breed_path(fish_id: @fish,id: @breed), class: :prototype__btn %><br />
-          <%= link_to "削除する", fish_path(@fish), method: :delete, class: :prototype__btn %>
+          <%= link_to "削除する", fish_path(@fish), method: :delete, class: :prototype__btn, id: "destroy" %>
         </div>
         <% end %>
            </div>
@@ -157,30 +157,4 @@
           </div>
          </div>
        </main>
-      <%# <div class="prototype__comments"> %>
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-          <%# if user_signed_in? %>
-          <%#= form_with(model:[@prototype,@comment],local: true) do |f| %>
-            <%# div class="field"> %>
-              <%# <%= f.label :content, "コメント" %>
-              <%# br />
-              <%# <%= f.text_field :content, id:"comment_content" %>
-            <%# </div> %>
-            <%# <div class="actions"> %>
-              <%# <%= f.submit "送信する", class: :form__btn  %> 
-            <%# </div> %>
-          <%# <% end %> 
-         <%# <% end %> 
-        <%# // ログインしているユーザーには上記を表示する %>
-        <%# <ul class="comments_lists"> %>
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-             <%# <% @comments.each do |comment| %>
-               <%# <li class="comments_list"> %>
-                 <%# <%= comment.content%>
-                 <%# <%= link_to "（#{comment.user.name}）", user_path(comment.user), class: :comment_user %>
-               <%# </li> %>
-              <%# <% end %>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
-        <%# </ul> %>
-      <%# </div> %>
 
