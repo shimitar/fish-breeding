@@ -1,18 +1,19 @@
 <main class="main">
 <div class ="back">
   <%= image_tag "IMG_0016.jpeg",  class: "back-image"%>
+  <div class= "destroy_text", id="destroy_main" >
+  削除されました
+  </div>
    <% if user_signed_in? %>
     <%# ログインしているときは以下を表示する %>
         <span class="greeting">こんにちは
         <%= current_user.nickname %>
         さん</span>
     <% end %>
-    <%# // ログインしているときは上記を表示する %>
   <div class="inner">
    <div class="card__back">
     <div class="card__wrapper">
     <%= render partial: 'fish', collection: @fishes %>
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
       </div>
      </div>
     </div>
