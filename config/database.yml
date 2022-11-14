@@ -16,8 +16,8 @@ default: &default
 
 development:
   <<: *default
-   adapter: mysql2
-   username: root
+  adapter: mysql2
+  username: root
   password:
   host: localhost
   database: fish_breeding_development
@@ -27,7 +27,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-   adapter: mysql2
+  adapter: mysql2
   username: root
   password:
   host: localhost
@@ -57,5 +57,5 @@ production:
   database: fish_breeding_production
   username: fish_breeding
   password: <%= ENV['FISH_BREEDING_DATABASE_PASSWORD'] %>
-   adapter: postgresql
+  adapter: postgresql
   url: <%= ENV['DATABASE_URL'] %>
