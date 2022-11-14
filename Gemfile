@@ -70,3 +70,6 @@ gem 'rails-i18n'
 group :production do
   gem 'pg'
 end
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
