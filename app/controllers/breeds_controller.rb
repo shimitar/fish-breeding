@@ -8,9 +8,8 @@ class BreedsController < ApplicationController
   def update
     @breed = Breed.find(params[:id])
     if @breed.update(breed_params)
-      @fish = Fish.find(params[:fish_id])
-      @questions = Question.where(fish_id: params[:id] )
-      render template: "fishes/show"
+      fish = Fish.find(params[:fish_id])
+      redirect_to fish_path(id: fish.id)
     else
       render :edit
     end
