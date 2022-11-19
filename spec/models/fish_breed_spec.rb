@@ -45,32 +45,32 @@ RSpec.describe FishBreed, type: :model do
       it '魚の名前が空だと保存できない' do
         @fish_breed.name = ''
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("魚の名前を入力してください")
+        expect(@fish_breed.errors.full_messages).to include('魚の名前を入力してください')
       end
       it '魚の大きさが空だと保存できない' do
         @fish_breed.size = ''
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("魚の大きさを入力してください")
+        expect(@fish_breed.errors.full_messages).to include('魚の大きさを入力してください')
       end
       it '魚の大きさにcmかmを入力しないと保存できない' do
         @fish_breed.size = '10'
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("魚の大きさは不正な値です")
+        expect(@fish_breed.errors.full_messages).to include('魚の大きさは不正な値です')
       end
       it '魚のカテゴリーを選択していないと保存できない' do
         @fish_breed.category_id = 1
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("魚のカテゴリーを入力してください")
+        expect(@fish_breed.errors.full_messages).to include('魚のカテゴリーを入力してください')
       end
       it '魚の説明が空だと保存できない' do
         @fish_breed.fish_text = ''
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("魚の説明を入力してください")
+        expect(@fish_breed.errors.full_messages).to include('魚の説明を入力してください')
       end
       it 'ユーザーが紐付いていないと保存できない' do
         @fish_breed.user_id = nil
         @fish_breed.valid?
-        expect(@fish_breed.errors.full_messages).to include("ユーザーを入力してください")
+        expect(@fish_breed.errors.full_messages).to include('ユーザーを入力してください')
       end
     end
   end

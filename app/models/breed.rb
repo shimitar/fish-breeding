@@ -3,7 +3,7 @@ class Breed < ApplicationRecord
     validates  :fish_id
     validates  :user_id
   end
-  
+
   belongs_to :user
-  belongs_to :fish 
+  belongs_to :fish
 end

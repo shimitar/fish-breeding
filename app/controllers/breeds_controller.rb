@@ -19,7 +19,9 @@ class BreedsController < ApplicationController
   private
 
   def breed_params
-    params.require(:breed).permit(:tank_size, :temperature, :filter, :raito, :condition, :sand, :plant, :breeding_text).merge(fish_id: params[:fish_id], user_id: current_user.id)
+    params.require(:breed).permit(:tank_size, :temperature, :filter, :raito, :condition, :sand, :plant, :breeding_text).merge(
+      fish_id: params[:fish_id], user_id: current_user.id
+    )
   end
 
   def contributor_confirmation

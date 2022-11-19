@@ -13,6 +13,7 @@ class QuestionsController < ApplicationController
   end
 
   private
+
   def question_params
     params.require(:question).permit(:question_text).merge(fish_id: params[:fish_id], user_id: current_user.id)
   end

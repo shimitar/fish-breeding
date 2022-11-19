@@ -47,12 +47,12 @@ RSpec.describe Breed, type: :model do
       it 'ユーザーが紐付いていないと保存できない' do
         @breed.user_id = nil
         @breed.valid?
-        expect(@breed.errors.full_messages).to include("ユーザーを入力してください")
+        expect(@breed.errors.full_messages).to include('ユーザーを入力してください')
       end
       it '魚の情報が紐付いていないと保存できない' do
         @breed.fish_id = nil
         @breed.valid?
-        expect(@breed.errors.full_messages).to include("魚の情報を入力してください")
+        expect(@breed.errors.full_messages).to include('魚の情報を入力してください')
       end
     end
   end

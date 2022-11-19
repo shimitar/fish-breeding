@@ -42,7 +42,7 @@ class FishesController < ApplicationController
     fish = Fish.find(params[:id])
     fish.destroy
     redirect_to root_path
- end
+  end
 
   private
 
@@ -52,7 +52,7 @@ class FishesController < ApplicationController
 
   def fish_breed_params
     params.require(:fish_breed).permit(:name, :size, :fish_text, :category_id, :image, :tank_size, :temperature,
-                                          :filter, :raito, :condition, :sand, :plant, :breeding_text).merge(fish_id: params[:fish_id], user_id: current_user.id)
+                                       :filter, :raito, :condition, :sand, :plant, :breeding_text).merge(fish_id: params[:fish_id], user_id: current_user.id)
   end
 
   def fish_params

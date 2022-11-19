@@ -15,27 +15,27 @@ RSpec.describe Answer, type: :model do
         expect(@answer).to be_valid
       end
     end
-      context '内容に問題がある場合' do
-        it '解答が空だと保存できない' do
-          @answer.answer_text = ''
-          @answer.valid?
-          expect(@answer.errors.full_messages).to include("解答を入力してください")
-        end
-        it 'ユーザーが紐付いていないと保存できない' do
-          @answer.user_id = nil
-          @answer.valid?
-          expect(@answer.errors.full_messages).to include("ユーザーを入力してください")
-        end
-        it '魚の情報が紐付いていないと保存できない' do
-          @answer.fish_id = nil
-          @answer.valid?
-          expect(@answer.errors.full_messages).to include("魚の情報を入力してください")
-        end
-        it '質問が紐付いていないと保存できない' do
-          @answer.question_id = nil
-          @answer.valid?
-          expect(@answer.errors.full_messages).to include("質問の情報を入力してください")
-        end
+    context '内容に問題がある場合' do
+      it '解答が空だと保存できない' do
+        @answer.answer_text = ''
+        @answer.valid?
+        expect(@answer.errors.full_messages).to include('解答を入力してください')
+      end
+      it 'ユーザーが紐付いていないと保存できない' do
+        @answer.user_id = nil
+        @answer.valid?
+        expect(@answer.errors.full_messages).to include('ユーザーを入力してください')
+      end
+      it '魚の情報が紐付いていないと保存できない' do
+        @answer.fish_id = nil
+        @answer.valid?
+        expect(@answer.errors.full_messages).to include('魚の情報を入力してください')
+      end
+      it '質問が紐付いていないと保存できない' do
+        @answer.question_id = nil
+        @answer.valid?
+        expect(@answer.errors.full_messages).to include('質問の情報を入力してください')
+      end
     end
   end
 end

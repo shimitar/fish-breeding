@@ -125,9 +125,9 @@ aaaaaa
 
 # データベース設計
 # ER図
-https://gyazo.com/2d8cf8f002f7d73dd4eea54bfe53801c
+https://gyazo.com/7b0ca3fdc2de444d0950d61e48f788af
 # 画面遷移図
-https://gyazo.com/6398dc55eefbfbe3f4ebb5f2ee4181f4
+https://gyazo.com/aa031b2ce16ca83624eb001fdbab2ac4
 # 開発環境
 - フロントエンド
 - バックエンド

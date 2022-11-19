@@ -7,7 +7,7 @@ class Fish < ApplicationRecord
     validates  :image
     validates  :user_id
   end
-  
+
   belongs_to :user
   has_one    :breed, dependent: :destroy
   has_many   :questions, dependent: :destroy
@@ -15,5 +15,4 @@ class Fish < ApplicationRecord
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
-  
 end
