@@ -12,6 +12,9 @@ FactoryBot.define do
     sand { '大磯砂' }
     plant { 'ミクロソリウム' }
     breeding_text { Faker::Lorem.sentence }
-    image { Rack::Test::UploadedFile.new(Rails.root.join('app/assets/images/test_image.png'), 'image/png') }
+
+    after(:create) do |item|
+      item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    end
   end
 end

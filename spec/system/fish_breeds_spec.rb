@@ -1,9 +1,11 @@
 require 'rails_helper'
 
+
 RSpec.describe "魚と飼育環境の情報保存", type: :system do
       before do
         @user = FactoryBot.create(:user)
         @fish_breed = FactoryBot.build(:fish_breed, user_id: @user.id)
+        sleep(1)
       end
   
 
@@ -24,7 +26,7 @@ RSpec.describe "魚と飼育環境の情報保存", type: :system do
     fill_in "fish_breed[size]", with: @fish_breed.size
     fill_in "fish_breed[fish_text]", with: @fish_breed.fish_text
     select "カラシン", from: "fish_breed[category_id]"
-    find('input["type=file"]').set(@fish_breed.image)
+    attach_file("fish_breed[image]", Rails.root.join("public/images/test_image.png"))
     # 送信するとFishモデルとBreedモデルのカウントが1上がることを確認する
     expect{
       find('input[name="commit"]').click
