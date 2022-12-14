@@ -39,4 +39,13 @@ RSpec.describe "魚と飼育環境の情報保存", type: :system do
     expect(page).to have_content(@fish_breed.name)
   end
  end
+
+  context 'ツイート投稿ができないとき'do
+    it 'ログインしていないと新規投稿ページに遷移できない' do
+     # トップページに遷移する
+     visit root_path
+     # 新規投稿ページへのボタンがないことを確認する
+     expect(page).to have_no_content('投稿する')
+    end
+  end
 end
